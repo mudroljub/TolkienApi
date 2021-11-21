@@ -30,7 +30,7 @@ namespace TolkienApi
 
            // Dependency Injection
             services.AddScoped<QuoteService>();
-            // services.AddScoped<AuthorService>();
+            services.AddScoped<CharacterService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -23,6 +24,11 @@ namespace TolkienApi.Models
 
         [Required]
         public string Lotr_page_id { get; set; }
+
+        [Url]
+        public string LotrUrl { get; set; }
+
+        public IEnumerable<Quote> Quotes { get; set; }
 
         public string Birth { get; set; }
         public string Culture { get; set; }
