@@ -1,9 +1,7 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TolkienApi.Models;
 using TolkienApi.Services;
 using System.Collections.Generic;
-using System.Net.Mime;
 
 namespace TolkienApi.Controllers
 {
@@ -12,7 +10,8 @@ namespace TolkienApi.Controllers
     public class CharactersController : ControllerBase
     {
         private readonly CharacterService _characterService;
-        public CharactersController(CharacterService characterService) {
+        public CharactersController(CharacterService characterService)
+        {
             _characterService = characterService;
         }
 

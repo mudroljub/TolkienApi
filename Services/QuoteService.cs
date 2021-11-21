@@ -21,7 +21,7 @@ namespace TolkienApi.Services
 
         public Quote GetRandom() => _context.Quotes.ToList()[new Random().Next(0, _context.Quotes.Count())];
 
-        public IEnumerable<Quote> GetByAuthor(string author) => _context.Quotes.Where(p => p.Character == author);
+        public IEnumerable<Quote> GetByAuthor(string author) => _context.Quotes.Where(p => p.Author == author);
 
         public void Add(Quote quote)
         {
