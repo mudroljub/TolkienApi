@@ -36,43 +36,37 @@ namespace TolkienApi.Controllers
         /// Returns a character for a given id
         /// </summary>
         [HttpGet("{id}")]
-        public ActionResult<Character> GetById(int id)
+        public ActionResult<Character> GetById(int id = 408)
         {
             Character character = _characterService.GetById(id);
-
             return character == null ? NotFound() : Ok(character);
         }
 
-        // /// <summary>
-        // /// Returns a random character
-        // /// </summary>
-        // [HttpGet("random")]
-        // public ActionResult<Character> GetRandom() => Ok(_characterService.GetRandom());
+        /// <summary>
+        /// Returns a character for a given name
+        /// </summary>
+        [HttpGet("by/{name}")]
+        public ActionResult<Character> GetByName(string name = "Aragorn")
+        {
+            Character character = _characterService.GetByName(name);
+            return character == null ? NotFound() : Ok(character);
+        }
 
-        // /// <summary>
-        // /// Create new character
-        // /// </summary>
-        // [HttpPost]
-        // public ActionResult Create([FromBody] Character character)
-        // {
-        //     _characterService.Add(character);
-        //     return CreatedAtRoute("Get", new { id = character.Id }, character);
-        // }
+        /// <summary>
+        /// Returns a random character
+        /// </summary>
+        [HttpGet("random")]
+        public ActionResult<Character> GetRandom() => Ok(_characterService.GetRandom());
 
-        // /// <summary>
-        // /// Replace an existing character with a new one
-        // /// </summary>
-        // [HttpPut]
-        // public ActionResult Update(Character newCharacter)
-        // {
-        //     Character oldCharacter = _characterService.GetById(newCharacter.Id);
-        //     if (oldCharacter is null)
-        //         return NotFound(new { message = "The character Id does not exist." });
-
-        //     _characterService.Replace(oldCharacter, newCharacter);
-
-        //     return Ok(newCharacter);
-        // }
+        /// <summary>
+        /// Create new character
+        /// </summary>
+        [HttpPost]
+        public ActionResult Create([FromBody] Character character)
+        {
+            _characterService.Add(character);
+            return CreatedAtRoute("Get", new { id = character.Id }, character);
+        }
 
     }
 }
