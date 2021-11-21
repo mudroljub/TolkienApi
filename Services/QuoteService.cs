@@ -46,5 +46,7 @@ namespace TolkienApi.Services
             _context.Quotes.Update(quote);
             _context.SaveChanges();
         }
+
+        public int GetCount() => _context.Quotes.Count();
     }
 }

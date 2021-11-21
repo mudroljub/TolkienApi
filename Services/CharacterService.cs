@@ -17,9 +17,15 @@ namespace TolkienApi.Services
             _quoteService = quoteService;
         }
 
-        public IEnumerable<Character> GetAll() => _context.Characters;
+        public IEnumerable<Character> Get(int count)
+        {
+            return (count > 0 && count <= _context.Characters.Count())
+                ? _context.Characters.Take(count)
+                : _context.Characters;
+        }
 
-        public Character GetById(int id) {
+        public Character GetById(int id)
+        {
             var character = _context.Characters.FirstOrDefault(p => p.Id == id);
             if (character != null)
             {
@@ -31,29 +37,30 @@ namespace TolkienApi.Services
 
         public Character GetRandom() => _context.Characters.ToList()[new Random().Next(0, _context.Characters.Count())];
 
-        public void Add(Character quote)
+        public void Add(Character character)
         {
-            _context.Characters.Add(quote);
+            _context.Characters.Add(character);
             _context.SaveChanges();
         }
 
-        public void Delete(Character quote)
+        public void Delete(Character character)
         {
-            _context.Characters.Remove(quote);
+            _context.Characters.Remove(character);
             _context.SaveChanges();
         }
 
         public void Replace(Character oldCharacter, Character newCharacter)
-        { 
+        {
             _context.Entry(oldCharacter).CurrentValues.SetValues(newCharacter);
             _context.SaveChanges();
         }
 
-        public void Update(Character quote)
+        public void Update(Character character)
         {
-            _context.Characters.Update(quote);
+            _context.Characters.Update(character);
             _context.SaveChanges();
         }
 
+        public int GetCount() => _context.Characters.Count();
     }
 }

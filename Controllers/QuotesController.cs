@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using TolkienApi.Models;
 using TolkienApi.Services;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mime;
 
 namespace TolkienApi.Controllers
@@ -97,5 +96,11 @@ namespace TolkienApi.Controllers
 
             return NoContent();
         }
+
+        /// <summary>
+        /// Returns total number of quotes
+        /// </summary>
+        [HttpGet("count")]
+        public ActionResult<int> GetCount() => Ok(_quoteService.GetCount());
     }
 }
