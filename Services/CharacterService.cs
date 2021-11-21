@@ -26,11 +26,12 @@ namespace TolkienApi.Services
 
         public Character GetById(int id)
         {
-            var character = _context.Characters.FirstOrDefault(p => p.Id == id);
+            Character character = _context.Characters.FirstOrDefault(p => p.Id == id);
             if (character != null)
             {
-                character.Quotes = _quoteService.GetByAuthor(character.Name);
-                character.LotrUrl = $"- http://lotr.wikia.com/?curid={character.Lotr_page_id}";
+                IEnumerable<Quote> quotes = _quoteService.GetByAuthor(character.Name);
+                if (quotes.Any()) character.Quotes = quotes;
+                character.Lotr_url = $"http://lotr.wikia.com/?curid={character.Lotr_page_id}";
             }
             return character;
         }

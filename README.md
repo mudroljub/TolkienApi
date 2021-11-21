@@ -8,7 +8,7 @@ Otvaranje članka po id-u:
 
 ## TODO
 
-- prevesti Lotr_page_id u int?
+- ne vracati null polja, ni prazan niz citata
 - povezati slike sa https://lotr.wikia.com/ ili http://www.tolkiengateway.net/
 
 ## Model

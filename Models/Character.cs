@@ -26,7 +26,7 @@ namespace TolkienApi.Models
         public string Lotr_page_id { get; set; }
 
         [Url]
-        public string LotrUrl { get; set; }
+        public string Lotr_url { get; set; }
 
         public IEnumerable<Quote> Quotes { get; set; }
 

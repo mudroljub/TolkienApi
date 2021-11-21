@@ -32,17 +32,16 @@ namespace TolkienApi.Controllers
         [HttpGet("count")]
         public ActionResult<int> GetCount() => Ok(_characterService.GetCount());
 
+        /// <summary>
+        /// Returns a character for a given id
+        /// </summary>
+        [HttpGet("{id}")]
+        public ActionResult<Character> GetById(int id)
+        {
+            Character character = _characterService.GetById(id);
 
-        // /// <summary>
-        // /// Returns a character for a given id
-        // /// </summary>
-        // [HttpGet("{id}", Name = "Get")]
-        // public ActionResult<Character> Get(int id)
-        // {
-        //     Character character = _characterService.GetById(id);
-
-        //     return character == null ? NotFound() : Ok(character);
-        // }
+            return character == null ? NotFound() : Ok(character);
+        }
 
         // /// <summary>
         // /// Returns a random character
