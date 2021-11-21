@@ -5,7 +5,7 @@ using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using TolkienApi.Models;
 
-namespace ProgrammingQuotesApi.Helpers
+namespace TolkienApi.Helpers
 {
     public class DataContext : DbContext
     {
