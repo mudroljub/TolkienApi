@@ -61,10 +61,10 @@ namespace TolkienApi.Controllers
         /// Create new character
         /// </summary>
         [HttpPost]
-        public ActionResult Create([FromBody] Character character)
+        public ActionResult Create([FromBody] CharacterNew character)
         {
             _characterService.Add(character);
-            return CreatedAtRoute("Get", new { id = character.Id }, character);
+            return Created("", character);
         }
 
     }

@@ -1,3 +1,4 @@
+using AutoMapper;
 using TolkienApi.Helpers;
 using TolkienApi.Models;
 using System.Collections.Generic;
@@ -10,11 +11,13 @@ namespace TolkienApi.Services
     {
         private readonly DataContext _context;
         private readonly QuoteService _quoteService;
+        private readonly IMapper _mapper;
 
-        public CharacterService(DataContext context, QuoteService quoteService)
+        public CharacterService(DataContext context, QuoteService quoteService, IMapper mapper)
         {
             _context = context;
             _quoteService = quoteService;
+            _mapper = mapper;
         }
 
         public IEnumerable<Character> Get(int count)
@@ -50,8 +53,9 @@ namespace TolkienApi.Services
 
         public Character GetRandom() => _context.Characters.ToList()[new Random().Next(0, _context.Characters.Count())];
 
-        public void Add(Character character)
+        public void Add(CharacterNew data)
         {
+            Character character = _mapper.Map<Character>(data);
             _context.Characters.Add(character);
             _context.SaveChanges();
         }

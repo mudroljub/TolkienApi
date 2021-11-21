@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using TolkienApi.Helpers;
 using TolkienApi.Services;
+using System;
 
 namespace TolkienApi
 {
@@ -21,14 +22,16 @@ namespace TolkienApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>();
-
+            services.AddCors();
             services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TolkienApi", Version = "v1" });
             });
 
-           // Dependency Injection
+            // Dependency Injection
             services.AddScoped<QuoteService>();
             services.AddScoped<CharacterService>();
         }
