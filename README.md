@@ -8,8 +8,6 @@ Otvaranje članka po id-u:
 
 ## TODO
 
-- ne vracati null polja
-- da bude qoute.Author
 - povezati slike sa https://lotr.wikia.com/ ili http://www.tolkiengateway.net/
 
 ## Model
