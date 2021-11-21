@@ -24,6 +24,11 @@ namespace TolkienApi
             services.AddDbContext<DataContext>();
             services.AddCors();
             services.AddControllers();
+            services.AddMvc()
+             .AddJsonOptions(options =>
+             {
+                 options.JsonSerializerOptions.IgnoreNullValues = true;
+             });
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSwaggerGen(c =>
