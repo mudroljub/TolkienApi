@@ -40,6 +40,7 @@ namespace TolkienApi
             services.AddScoped<QuoteService>();
             services.AddScoped<CharacterService>();
             services.AddScoped<ArtefactService>();
+            services.AddScoped<BattleService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
