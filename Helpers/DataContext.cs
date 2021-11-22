@@ -24,13 +24,13 @@ namespace TolkienApi.Helpers
 
         public DataContext()
         {
-            Init<Quote>(Quotes, "Data/quotes.json")
-            Init<Character>(Characters, "Data/characters.json")
-            Init<Artefact>(Artefacts, "Data/artefacts.json")
-            Init<Battle>(Battles, "Data/battles.json")
-            Init<Culture>(Cultures, "Data/cultures.json")
-            Init<Location>(Locations, "Data/locations.json")
-            Init<Race>(Races, "Data/races.json")
+            Init<Quote>(Quotes, "Data/quotes.json");
+            Init<Character>(Characters, "Data/characters.json");
+            Init<Artefact>(Artefacts, "Data/artefacts.json");
+            Init<Battle>(Battles, "Data/battles.json");
+            Init<Culture>(Cultures, "Data/cultures.json");
+            Init<Location>(Locations, "Data/locations.json");
+            Init<Race>(Races, "Data/races.json");
         }
 
         private void Init<T>(DbSet<T> dbSet, string filePath) {
