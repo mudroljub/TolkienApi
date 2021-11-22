@@ -15,6 +15,7 @@ namespace TolkienApi.Helpers
         public DbSet<Battle> Battles { get; set; }
         public DbSet<Culture> Cultures { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<Race> Races { get; set; }
 
         private readonly JsonSerializerOptions JsonOptions = new()
         {
@@ -29,6 +30,7 @@ namespace TolkienApi.Helpers
             InitBattles();
             InitCultures();
             InitLocations();
+            InitRaces();
         }
 
         private void InitQuotes()
@@ -94,6 +96,17 @@ namespace TolkienApi.Helpers
             List<Location> locations = JsonSerializer.Deserialize<List<Location>>(fileContent, JsonOptions);
 
             Locations.AddRange(locations);
+            SaveChanges();
+        }
+
+        public void InitRaces()
+        {
+            if (Races.Any()) return;
+
+            string fileContent = File.ReadAllText("Data/races.json");
+            List<Race> races = JsonSerializer.Deserialize<List<Race>>(fileContent, JsonOptions);
+
+            Races.AddRange(races);
             SaveChanges();
         }
 
