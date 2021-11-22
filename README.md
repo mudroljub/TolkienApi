@@ -8,6 +8,7 @@ Otvaranje članka po id-u:
 
 ## TODO
 
+- dodati foreign key
 - povezati slike sa https://lotr.wikia.com/ ili http://www.tolkiengateway.net/
 
 ## Model
