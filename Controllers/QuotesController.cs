@@ -31,7 +31,7 @@ namespace TolkienApi.Controllers
         /// <summary>
         /// Returns a quote for a given id
         /// </summary>
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<Quote> Get(int id)
