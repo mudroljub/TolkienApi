@@ -36,7 +36,6 @@ namespace TolkienApi.Services
             {
                 IEnumerable<Quote> quotes = _quoteService.GetByCharacter(character.Name);
                 if (quotes.Any()) character.Quotes = quotes;
-                character.Lotr_url = $"http://lotr.wikia.com/?curid={character.Lotr_page_id}";
             }
             return character;
         }
@@ -48,7 +47,6 @@ namespace TolkienApi.Services
             {
                 IEnumerable<Quote> quotes = _quoteService.GetByCharacter(character.Name);
                 if (quotes.Any()) character.Quotes = quotes;
-                character.Lotr_url = $"http://lotr.wikia.com/?curid={character.Lotr_page_id}";
             }
             return character;
         }

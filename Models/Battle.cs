@@ -16,6 +16,10 @@ namespace TolkienApi.Models
         public string Lotr_page_id { get; set; }
         [Required]
         public string Location { get; set; }
+        [Url]
+        public string Lotr_url { 
+            get { return $"http://lotr.wikia.com/?curid={Lotr_page_id}"; }   
+        }
 
         public string Conflict { get; set; }
         public string Date { get; set; }
