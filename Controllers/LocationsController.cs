@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using TolkienApi.Models;
 using TolkienApi.Services;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TolkienApi.Controllers
 {
@@ -45,6 +46,7 @@ namespace TolkienApi.Controllers
         /// Create new location
         /// </summary>
         [HttpPost]
+        [Authorize]
         public ActionResult Create([FromBody] Location location)
         {
             _locationService.Add(location);
@@ -61,6 +63,7 @@ namespace TolkienApi.Controllers
         /// Replace an existing location with a new one
         /// </summary>
         [HttpPut]
+        [Authorize]
         public ActionResult Update(Location newLocation)
         {
             Location oldLocation = _locationService.GetById(newLocation.Id);
@@ -76,6 +79,7 @@ namespace TolkienApi.Controllers
         /// Delete a location by id
         /// </summary>
         [HttpDelete("{id}")]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             Location location = _locationService.GetById(id);

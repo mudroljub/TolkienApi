@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using TolkienApi.Models;
 using TolkienApi.Services;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TolkienApi.Controllers
 {
@@ -67,6 +68,7 @@ namespace TolkienApi.Controllers
         /// Create new character
         /// </summary>
         [HttpPost]
+        [Authorize]
         public ActionResult Create([FromBody] CharacterNew character)
         {
             _characterService.Add(character);
@@ -77,6 +79,7 @@ namespace TolkienApi.Controllers
         /// Delete a character by id
         /// </summary>
         [HttpDelete("{id}")]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             var character = _characterService.GetById(id);

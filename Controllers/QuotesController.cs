@@ -4,6 +4,7 @@ using TolkienApi.Models;
 using TolkienApi.Services;
 using System.Collections.Generic;
 using System.Net.Mime;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TolkienApi.Controllers
 {
@@ -54,6 +55,7 @@ namespace TolkienApi.Controllers
         /// Create new quote
         /// </summary>
         [HttpPost]
+        [Authorize]
         public ActionResult Create([FromBody] Quote quote)
         {
             _quoteService.Add(quote);
@@ -70,6 +72,7 @@ namespace TolkienApi.Controllers
         /// Replace an existing quote with a new one
         /// </summary>
         [HttpPut]
+        [Authorize]
         public ActionResult Update(Quote newQuote)
         {
             Quote oldQuote = _quoteService.GetById(newQuote.Id);
@@ -85,6 +88,7 @@ namespace TolkienApi.Controllers
         /// Delete a quote by id
         /// </summary>
         [HttpDelete("{id}")]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             Quote quote = _quoteService.GetById(id);

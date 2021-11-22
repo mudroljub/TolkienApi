@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using TolkienApi.Models;
 using TolkienApi.Services;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TolkienApi.Controllers
 {
@@ -45,6 +46,7 @@ namespace TolkienApi.Controllers
         /// Create new culture
         /// </summary>
         [HttpPost]
+        [Authorize]
         public ActionResult Create([FromBody] Culture culture)
         {
             _cultureService.Add(culture);
@@ -67,6 +69,7 @@ namespace TolkienApi.Controllers
         /// Replace an existing culture with a new one
         /// </summary>
         [HttpPut]
+        [Authorize]
         public ActionResult Update(Culture newCulture)
         {
             Culture oldCulture = _cultureService.GetById(newCulture.Id);
@@ -82,6 +85,7 @@ namespace TolkienApi.Controllers
         /// Delete a culture by id
         /// </summary>
         [HttpDelete("{id}")]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             Culture culture = _cultureService.GetById(id);

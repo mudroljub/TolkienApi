@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using TolkienApi.Models;
 using TolkienApi.Services;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TolkienApi.Controllers
 {
@@ -45,6 +46,7 @@ namespace TolkienApi.Controllers
         /// Create new artefact
         /// </summary>
         [HttpPost]
+        [Authorize]
         public ActionResult Create([FromBody] Artefact artefact)
         {
             _artefactService.Add(artefact);
@@ -67,6 +69,7 @@ namespace TolkienApi.Controllers
         /// Replace an existing artefact with a new one
         /// </summary>
         [HttpPut]
+        [Authorize]
         public ActionResult Update(Artefact newArtefact)
         {
             Artefact oldArtefact = _artefactService.GetById(newArtefact.Id);
@@ -81,6 +84,7 @@ namespace TolkienApi.Controllers
         /// <summary>
         /// Delete a artefact by id
         /// </summary>
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {

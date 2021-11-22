@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using TolkienApi.Models;
 using TolkienApi.Services;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TolkienApi.Controllers
 {
@@ -45,6 +46,7 @@ namespace TolkienApi.Controllers
         /// Create new race
         /// </summary>
         [HttpPost]
+        [Authorize]
         public ActionResult Create([FromBody] Race race)
         {
             _raceService.Add(race);
@@ -61,6 +63,7 @@ namespace TolkienApi.Controllers
         /// Replace an existing race with a new one
         /// </summary>
         [HttpPut]
+        [Authorize]
         public ActionResult Update(Race newRace)
         {
             Race oldRace = _raceService.GetById(newRace.Id);
@@ -76,6 +79,7 @@ namespace TolkienApi.Controllers
         /// Delete a race by id
         /// </summary>
         [HttpDelete("{id}")]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             Race race = _raceService.GetById(id);

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using TolkienApi.Models;
 using TolkienApi.Services;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TolkienApi.Controllers
 {
@@ -45,6 +46,7 @@ namespace TolkienApi.Controllers
         /// Create new battle
         /// </summary>
         [HttpPost]
+        [Authorize]
         public ActionResult Create([FromBody] Battle battle)
         {
             _battleService.Add(battle);
@@ -61,6 +63,7 @@ namespace TolkienApi.Controllers
         /// Replace an existing battle with a new one
         /// </summary>
         [HttpPut]
+        [Authorize]
         public ActionResult Update(Battle newBattle)
         {
             Battle oldBattle = _battleService.GetById(newBattle.Id);
@@ -76,6 +79,7 @@ namespace TolkienApi.Controllers
         /// Delete a battle by id
         /// </summary>
         [HttpDelete("{id}")]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             Battle battle = _battleService.GetById(id);
