@@ -54,7 +54,7 @@ namespace TolkienApi.Controllers
         /// <summary>
         /// Returns characters for a given loction
         /// </summary>
-        [HttpGet("of/{location}")]
+        [HttpGet("in/{location}")]
         public IEnumerable<Character> GetByLocation(string location = "Gondor") => _characterService.GetByLocation(location);
 
         /// <summary>
