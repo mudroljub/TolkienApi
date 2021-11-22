@@ -27,6 +27,8 @@ namespace TolkienApi.Services
                 : _context.Characters;
         }
 
+        public IEnumerable<Character> GetByLocation(string location) => _context.Characters.Where(p => p.Location == location);
+
         public Character GetById(int id)
         {
             Character character = _context.Characters.FirstOrDefault(p => p.Id == id);

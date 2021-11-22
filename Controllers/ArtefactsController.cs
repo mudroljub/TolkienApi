@@ -60,7 +60,7 @@ namespace TolkienApi.Controllers
         /// <summary>
         /// Returns artefacts for a given loction
         /// </summary>
-        [HttpGet("location/{location}")]
+        [HttpGet("of/{location}")]
         public IEnumerable<Artefact> GetByLocation(string location = "Rohan") => _artefactService.GetByLocation(location);
 
         /// <summary>
