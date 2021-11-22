@@ -14,6 +14,8 @@ namespace TolkienApi.Helpers
         public DbSet<Artefact> Artefacts { get; set; }
         public DbSet<Battle> Battles { get; set; }
 
+        public DbSet<Culture> Cultures { get; set; }
+
         private readonly JsonSerializerOptions JsonOptions = new()
         {
             PropertyNameCaseInsensitive = true
@@ -25,6 +27,7 @@ namespace TolkienApi.Helpers
             InitCharacters();
             InitArtefacts();
             InitBattles();
+            InitCultures();
         }
 
         private void InitQuotes()
@@ -68,6 +71,17 @@ namespace TolkienApi.Helpers
             List<Battle> battles = JsonSerializer.Deserialize<List<Battle>>(fileContent, JsonOptions);
 
             Battles.AddRange(battles);
+            SaveChanges();
+        }
+
+        public void InitCultures()
+        {
+            if (Cultures.Any()) return;
+
+            string fileContent = File.ReadAllText("Data/cultures.json");
+            List<Culture> cultures = JsonSerializer.Deserialize<List<Culture>>(fileContent, JsonOptions);
+
+            Cultures.AddRange(cultures);
             SaveChanges();
         }
 
