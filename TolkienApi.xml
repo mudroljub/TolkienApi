@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TolkienApi</name>
+    </assembly>
+    <members>
+        <member name="M:TolkienApi.Controllers.ArtefactsController.GetAll">
+            <summary>
+            Returns a list of artefacts
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.ArtefactsController.GetById(System.Int32)">
+            <summary>
+            Returns a artefact for a given id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.ArtefactsController.GetRandom">
+            <summary>
+            Returns a random artefact
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.ArtefactsController.Create(TolkienApi.Models.Artefact)">
+            <summary>
+            Create new artefact
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.ArtefactsController.GetByCharacter(System.String)">
+            <summary>
+            Returns all artefacts for a given character
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.ArtefactsController.GetByLocation(System.String)">
+            <summary>
+            Returns artefacts for a given loction
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.ArtefactsController.Update(TolkienApi.Models.Artefact)">
+            <summary>
+            Replace an existing artefact with a new one
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.ArtefactsController.Delete(System.Int32)">
+            <summary>
+            Delete a artefact by id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.ArtefactsController.GetCount">
+            <summary>
+            Returns total number of artefacts
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.BattlesController.GetAll">
+            <summary>
+            Returns a list of battles
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.BattlesController.GetById(System.Int32)">
+            <summary>
+            Returns a battle for a given id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.BattlesController.GetRandom">
+            <summary>
+            Returns a random battle
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.BattlesController.Create(TolkienApi.Models.Battle)">
+            <summary>
+            Create new battle
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.BattlesController.GetByLocation(System.String)">
+            <summary>
+            Returns battles for a given loction
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.BattlesController.Update(TolkienApi.Models.Battle)">
+            <summary>
+            Replace an existing battle with a new one
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.BattlesController.Delete(System.Int32)">
+            <summary>
+            Delete a battle by id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.BattlesController.GetCount">
+            <summary>
+            Returns total number of battles
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CharactersController.Get(System.Int32)">
+            <summary>
+            Returns a list of characters
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CharactersController.GetCount">
+            <summary>
+            Returns total number of characters
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CharactersController.GetById(System.Int32)">
+            <summary>
+            Returns a character for a given id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CharactersController.GetByName(System.String)">
+            <summary>
+            Returns a character for a given name
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CharactersController.GetByLocation(System.String)">
+            <summary>
+            Returns characters for a given loction
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CharactersController.GetRandom">
+            <summary>
+            Returns a random character
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CharactersController.Create(TolkienApi.Models.CharacterNew)">
+            <summary>
+            Create new character
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CulturesController.GetAll">
+            <summary>
+            Returns a list of cultures
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CulturesController.GetById(System.Int32)">
+            <summary>
+            Returns a culture for a given id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CulturesController.GetRandom">
+            <summary>
+            Returns a random culture
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CulturesController.Create(TolkienApi.Models.Culture)">
+            <summary>
+            Create new culture
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CulturesController.GetByCharacter(System.String)">
+            <summary>
+            Returns all cultures for a given character
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CulturesController.GetByLocation(System.String)">
+            <summary>
+            Returns cultures for a given loction
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CulturesController.Update(TolkienApi.Models.Culture)">
+            <summary>
+            Replace an existing culture with a new one
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CulturesController.Delete(System.Int32)">
+            <summary>
+            Delete a culture by id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.CulturesController.GetCount">
+            <summary>
+            Returns total number of cultures
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.LocationsController.GetAll">
+            <summary>
+            Returns a list of locations
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.LocationsController.GetById(System.Int32)">
+            <summary>
+            Returns a location for a given id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.LocationsController.GetRandom">
+            <summary>
+            Returns a random location
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.LocationsController.Create(TolkienApi.Models.Location)">
+            <summary>
+            Create new location
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.LocationsController.GetByCulture(System.String)">
+            <summary>
+            Returns all locations for a given culture
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.LocationsController.Update(TolkienApi.Models.Location)">
+            <summary>
+            Replace an existing location with a new one
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.LocationsController.Delete(System.Int32)">
+            <summary>
+            Delete a location by id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.LocationsController.GetCount">
+            <summary>
+            Returns total number of locations
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.QuotesController.GetAll">
+            <summary>
+            Returns a list of quotes
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.QuotesController.Get(System.Int32)">
+            <summary>
+            Returns a quote for a given id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.QuotesController.GetRandom">
+            <summary>
+            Returns a random quote
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.QuotesController.Create(TolkienApi.Models.Quote)">
+            <remarks>
+            Don't send quote id, it will be auto-generated.
+            </remarks>
+            <summary>
+            Create new quote
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.QuotesController.GetQuotesByCharacter(System.String)">
+            <summary>
+            Returns all quotes for a given character
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.QuotesController.Update(TolkienApi.Models.Quote)">
+            <summary>
+            Replace an existing quote with a new one
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.QuotesController.Delete(System.Int32)">
+            <summary>
+            Delete a quote by id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.QuotesController.GetCount">
+            <summary>
+            Returns total number of quotes
+            </summary>
+        </member>
+    </members>
+</doc>
