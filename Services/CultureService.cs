@@ -21,12 +21,13 @@ namespace TolkienApi.Services
 
         public Culture GetRandom() => _context.Cultures.ToList()[new Random().Next(0, _context.Cultures.Count())];
 
-        private bool Includes(string arr, string word)
+        private static bool Includes(string line, string word)
         {
-            if (string.IsNullOrEmpty(arr))
+            if (string.IsNullOrEmpty(line))
                 return false;
 
-            return arr.ToLower().Split(',').Contains(word.ToLower());
+            List<string> parts = line.Split(',').Select(p => p.Trim()).ToList();
+            return parts.Any(s => string.Equals(s, word, StringComparison.OrdinalIgnoreCase));
         }
 
         public IEnumerable<Culture> GetByCharacter(string character) => _context.Cultures.Where(p => Includes(p.Characters, character));
@@ -46,7 +47,7 @@ namespace TolkienApi.Services
         }
 
         public void Replace(Culture oldCulture, Culture newCulture)
-        { 
+        {
             _context.Entry(oldCulture).CurrentValues.SetValues(newCulture);
             _context.SaveChanges();
         }
