@@ -17,6 +17,13 @@ namespace TolkienApi.Services
 
         public IEnumerable<Location> GetAll() => _context.Locations;
 
+        public IEnumerable<Location> Get(int count)
+        {
+            return (count > 0 && count <= _context.Locations.Count())
+                ? _context.Locations.Take(count)
+                : _context.Locations;
+        }
+
         public Location GetById(int id) => _context.Locations.FirstOrDefault(p => p.Id == id);
 
         public Location GetRandom() => _context.Locations.ToList()[new Random().Next(0, _context.Locations.Count())];

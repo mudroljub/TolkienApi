@@ -19,7 +19,7 @@ namespace TolkienApi.Controllers
         /// Returns a list of characters
         /// </summary>
         [HttpGet]
-        public ActionResult<IEnumerable<Character>> Get(int count = 10)
+        public ActionResult<IEnumerable<Character>> Get(int count = 20)
         {
             IEnumerable<Character> characters = _characterService.Get(count);
             return Ok(characters);

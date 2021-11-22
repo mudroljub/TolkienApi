@@ -174,7 +174,7 @@
             Returns total number of cultures
             </summary>
         </member>
-        <member name="M:TolkienApi.Controllers.LocationsController.GetAll">
+        <member name="M:TolkienApi.Controllers.LocationsController.Get(System.Int32)">
             <summary>
             Returns a list of locations
             </summary>

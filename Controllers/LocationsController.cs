@@ -18,9 +18,9 @@ namespace TolkienApi.Controllers
         /// Returns a list of locations
         /// </summary>
         [HttpGet]
-        public ActionResult<IEnumerable<Location>> GetAll()
+        public ActionResult<IEnumerable<Location>> Get(int count = 20)
         {
-            IEnumerable<Location> locations = _locationService.GetAll();
+            IEnumerable<Location> locations = _locationService.Get(count);
             return Ok(locations);
         }
 
