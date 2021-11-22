@@ -28,7 +28,7 @@ namespace TolkienApi.Controllers
         /// Returns a artefact for a given id
         /// </summary>
         [HttpGet("{id}")]
-        public ActionResult<Artefact> Get(int id)
+        public ActionResult<Artefact> GetById(int id)
         {
             Artefact artefact = _artefactService.GetById(id);
 
@@ -55,7 +55,13 @@ namespace TolkienApi.Controllers
         /// Returns all artefacts for a given character
         /// </summary>
         [HttpGet("by/{character}")]
-        public IEnumerable<Artefact> GetArtefactsByCharacter(string character = "Legolas") => _artefactService.GetByCharacter(character);
+        public IEnumerable<Artefact> GetByCharacter(string character = "Legolas") => _artefactService.GetByCharacter(character);
+
+        /// <summary>
+        /// Returns artefacts for a given loction
+        /// </summary>
+        [HttpGet("location/{location}")]
+        public IEnumerable<Artefact> GetByLocation(string location = "Rohan") => _artefactService.GetByLocation(location);
 
         /// <summary>
         /// Replace an existing artefact with a new one

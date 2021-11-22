@@ -23,6 +23,8 @@ namespace TolkienApi.Services
 
         public IEnumerable<Artefact> GetByCharacter(string character) => _context.Artefacts.Where(p => p.Character == character);
 
+        public IEnumerable<Artefact> GetByLocation(string location) => _context.Artefacts.Where(p => p.Location == location);
+
         public void Add(Artefact artefact)
         {
             _context.Artefacts.Add(artefact);
