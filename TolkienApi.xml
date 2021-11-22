@@ -124,6 +124,11 @@
             Create new character
             </summary>
         </member>
+        <member name="M:TolkienApi.Controllers.CharactersController.Delete(System.Int32)">
+            <summary>
+            Delete a character by id
+            </summary>
+        </member>
         <member name="M:TolkienApi.Controllers.CulturesController.GetAll">
             <summary>
             Returns a list of cultures

@@ -73,6 +73,9 @@ namespace TolkienApi.Controllers
             return Created("", character);
         }
 
+        /// <summary>
+        /// Delete a character by id
+        /// </summary>
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
