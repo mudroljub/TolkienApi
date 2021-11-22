@@ -12,7 +12,7 @@ namespace TolkienApi.Models
 
         [Url]
         public string Lotr_url { 
-            get { return $"http://lotr.wikia.com/?curid={Lotr_page_id}"; }   
+            get { return $"https://lotr.wikia.com/?curid={Lotr_page_id}"; }   
         }
 
         public IEnumerable<Quote> Quotes { get; set; }

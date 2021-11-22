@@ -1,10 +1,10 @@
 # Tolkien API
 
 Zvaničan LOTR API:
-- http://lotr.wikia.com/api.php
+- https://lotr.wikia.com/api.php
 
 Otvaranje članka po id-u:
-- http://lotr.wikia.com/?curid=27
+- https://lotr.wikia.com/?curid=27
 
 ## TODO
 
