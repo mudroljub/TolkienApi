@@ -37,8 +37,8 @@ namespace TolkienApi
             {
                 c.SwaggerDoc(version, new OpenApiInfo
                 {
-                    Title = "TolkienApi",
-                    Description = "Tolkien API for Middle-Earth lovers.",
+                    Title = "Tolkien API",
+                    Description = "The Tolkien API for Middle-Earth lovers.",
                     Contact = new OpenApiContact
                     {
                         Name = "Damjan Pavlica",
