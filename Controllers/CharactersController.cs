@@ -67,5 +67,13 @@ namespace TolkienApi.Controllers
             return Created("", character);
         }
 
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            var character = _characterService.GetById(id);
+            _characterService.Delete(character);
+            return Ok();
+        }
+
     }
 }

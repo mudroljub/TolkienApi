@@ -66,18 +66,6 @@ namespace TolkienApi.Services
             _context.SaveChanges();
         }
 
-        public void Replace(Character oldCharacter, Character newCharacter)
-        {
-            _context.Entry(oldCharacter).CurrentValues.SetValues(newCharacter);
-            _context.SaveChanges();
-        }
-
-        public void Update(Character character)
-        {
-            _context.Characters.Update(character);
-            _context.SaveChanges();
-        }
-
         public int GetCount() => _context.Characters.Count();
     }
 }
