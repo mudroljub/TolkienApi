@@ -24,89 +24,22 @@ namespace TolkienApi.Helpers
 
         public DataContext()
         {
-            InitQuotes();
-            InitCharacters();
-            InitArtefacts();
-            InitBattles();
-            InitCultures();
-            InitLocations();
-            InitRaces();
+            Init<Quote>(Quotes, "Data/quotes.json")
+            Init<Character>(Characters, "Data/characters.json")
+            Init<Artefact>(Artefacts, "Data/artefacts.json")
+            Init<Battle>(Battles, "Data/battles.json")
+            Init<Culture>(Cultures, "Data/cultures.json")
+            Init<Location>(Locations, "Data/locations.json")
+            Init<Race>(Races, "Data/races.json")
         }
 
-        private void InitQuotes()
-        {
-            if (Quotes.Any()) return;
+        private void Init<T>(DbSet<T> dbSet, string filePath) {
+            if(dbSet.Any()) return;
 
-            string fileContent = File.ReadAllText("Data/quotes.json");
-            List<Quote> quotes = JsonSerializer.Deserialize<List<Quote>>(fileContent, JsonOptions);
+            string fileContent = File.ReadAllText(filePath);
+            List<T> data = JsonSerializer.Deserialize<List<T>>(fileContent, JsonOptions);
 
-            Quotes.AddRange(quotes);
-            SaveChanges();
-        }
-
-        private void InitCharacters()
-        {
-            if (Characters.Any()) return;
-
-            string fileContent = File.ReadAllText("Data/characters.json");
-            List<Character> characters = JsonSerializer.Deserialize<List<Character>>(fileContent, JsonOptions);
-
-            Characters.AddRange(characters);
-            SaveChanges();
-        }
-
-        private void InitArtefacts()
-        {
-            if (Artefacts.Any()) return;
-
-            string fileContent = File.ReadAllText("Data/artefacts.json");
-            List<Artefact> artefact = JsonSerializer.Deserialize<List<Artefact>>(fileContent, JsonOptions);
-
-            Artefacts.AddRange(artefact);
-            SaveChanges();
-        }
-
-        private void InitBattles()
-        {
-            if (Battles.Any()) return;
-
-            string fileContent = File.ReadAllText("Data/battles.json");
-            List<Battle> battles = JsonSerializer.Deserialize<List<Battle>>(fileContent, JsonOptions);
-
-            Battles.AddRange(battles);
-            SaveChanges();
-        }
-
-        public void InitCultures()
-        {
-            if (Cultures.Any()) return;
-
-            string fileContent = File.ReadAllText("Data/cultures.json");
-            List<Culture> cultures = JsonSerializer.Deserialize<List<Culture>>(fileContent, JsonOptions);
-
-            Cultures.AddRange(cultures);
-            SaveChanges();
-        }
-
-        public void InitLocations()
-        {
-            if (Locations.Any()) return;
-
-            string fileContent = File.ReadAllText("Data/locations.json");
-            List<Location> locations = JsonSerializer.Deserialize<List<Location>>(fileContent, JsonOptions);
-
-            Locations.AddRange(locations);
-            SaveChanges();
-        }
-
-        public void InitRaces()
-        {
-            if (Races.Any()) return;
-
-            string fileContent = File.ReadAllText("Data/races.json");
-            List<Race> races = JsonSerializer.Deserialize<List<Race>>(fileContent, JsonOptions);
-
-            Races.AddRange(races);
+            dbSet.AddRange(data);
             SaveChanges();
         }
 
