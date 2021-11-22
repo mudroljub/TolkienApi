@@ -30,8 +30,6 @@ namespace TolkienApi.Services
             return parts.Any(s => string.Equals(s, word, StringComparison.OrdinalIgnoreCase));
         }
 
-        public IEnumerable<Race> GetByCharacter(string character) => _context.Races.Where(p => Includes(p.Characters, character));
-
         public IEnumerable<Race> GetByLocation(string location) => _context.Races.Where(p => Includes(p.Locations, location));
 
         public void Add(Race race)

@@ -8,7 +8,7 @@ Otvaranje članka po id-u:
 
 ## TODO
 
-- ograničiti get za duge liste
+- dodati Lotr_url svima
 - dodati foreign key
 - povezati slike sa https://lotr.wikia.com/ ili http://www.tolkiengateway.net/
 

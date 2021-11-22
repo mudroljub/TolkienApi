@@ -257,5 +257,45 @@
             Returns total number of quotes
             </summary>
         </member>
+        <member name="M:TolkienApi.Controllers.RacesController.GetAll">
+            <summary>
+            Returns a list of races
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.RacesController.GetById(System.Int32)">
+            <summary>
+            Returns a race for a given id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.RacesController.GetRandom">
+            <summary>
+            Returns a random race
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.RacesController.Create(TolkienApi.Models.Race)">
+            <summary>
+            Create new race
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.RacesController.GetByLocation(System.String)">
+            <summary>
+            Returns races for a given loction
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.RacesController.Update(TolkienApi.Models.Race)">
+            <summary>
+            Replace an existing race with a new one
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.RacesController.Delete(System.Int32)">
+            <summary>
+            Delete a race by id
+            </summary>
+        </member>
+        <member name="M:TolkienApi.Controllers.RacesController.GetCount">
+            <summary>
+            Returns total number of races
+            </summary>
+        </member>
     </members>
 </doc>
