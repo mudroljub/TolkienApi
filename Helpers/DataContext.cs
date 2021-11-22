@@ -11,6 +11,8 @@ namespace TolkienApi.Helpers
     {
         public DbSet<Character> Characters { get; set; }
         public DbSet<Quote> Quotes { get; set; }
+        public DbSet<Artefact> Artefacts { get; set; }
+
         private readonly JsonSerializerOptions JsonOptions = new()
         {
             PropertyNameCaseInsensitive = true
@@ -20,6 +22,7 @@ namespace TolkienApi.Helpers
         {
             InitQuotes();
             InitCharacters();
+            InitArtefacts();
         }
 
         private void InitQuotes()
@@ -41,6 +44,17 @@ namespace TolkienApi.Helpers
             List<Character> characters = JsonSerializer.Deserialize<List<Character>>(fileContent, JsonOptions);
 
             Characters.AddRange(characters);
+            SaveChanges();
+        }
+
+        private void InitArtefacts()
+        {
+            if (Artefacts.Any()) return;
+
+            string fileContent = File.ReadAllText("Data/artefact.json");
+            List<Artefact> artefact = JsonSerializer.Deserialize<List<Artefact>>(fileContent, JsonOptions);
+
+            Artefacts.AddRange(artefact);
             SaveChanges();
         }
 
