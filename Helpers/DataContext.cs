@@ -33,7 +33,7 @@ namespace TolkienApi.Helpers
             Init<Race>(Races, "Data/races.json");
         }
 
-        private void Init<T>(DbSet<T> dbSet, string filePath) {
+        private void Init<T>(DbSet<T> dbSet, string filePath) where T : class {
             if(dbSet.Any()) return;
 
             string fileContent = File.ReadAllText(filePath);
