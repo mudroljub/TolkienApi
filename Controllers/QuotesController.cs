@@ -64,7 +64,7 @@ namespace TolkienApi.Controllers
         /// Returns all quotes for a given character
         /// </summary>
         [HttpGet("by/{character}")]
-        public IEnumerable<Quote> GetQuotesByAuthor(string character = "Gandalf") => _quoteService.GetByAuthor(character);
+        public IEnumerable<Quote> GetQuotesByCharacter(string character = "Gandalf") => _quoteService.GetByCharacter(character);
 
         /// <summary>
         /// Replace an existing quote with a new one

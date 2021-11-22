@@ -51,7 +51,7 @@ namespace TolkienApi.Helpers
         {
             if (Artefacts.Any()) return;
 
-            string fileContent = File.ReadAllText("Data/artefact.json");
+            string fileContent = File.ReadAllText("Data/artefacts.json");
             List<Artefact> artefact = JsonSerializer.Deserialize<List<Artefact>>(fileContent, JsonOptions);
 
             Artefacts.AddRange(artefact);

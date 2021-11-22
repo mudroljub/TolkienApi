@@ -32,7 +32,7 @@ namespace TolkienApi.Services
             Character character = _context.Characters.FirstOrDefault(p => p.Id == id);
             if (character != null)
             {
-                IEnumerable<Quote> quotes = _quoteService.GetByAuthor(character.Name);
+                IEnumerable<Quote> quotes = _quoteService.GetByCharacter(character.Name);
                 if (quotes.Any()) character.Quotes = quotes;
                 character.Lotr_url = $"http://lotr.wikia.com/?curid={character.Lotr_page_id}";
             }
@@ -44,7 +44,7 @@ namespace TolkienApi.Services
             Character character = _context.Characters.FirstOrDefault(p => p.Name.ToLower() == name.ToLower());
             if (character != null)
             {
-                IEnumerable<Quote> quotes = _quoteService.GetByAuthor(character.Name);
+                IEnumerable<Quote> quotes = _quoteService.GetByCharacter(character.Name);
                 if (quotes.Any()) character.Quotes = quotes;
                 character.Lotr_url = $"http://lotr.wikia.com/?curid={character.Lotr_page_id}";
             }

@@ -11,7 +11,7 @@ namespace TolkienApi.Models
         [Required]
         public string Text { get; set; }
         [Required]
-        public string Author { get; set; }
+        public string Character { get; set; }
         [Required]
         public string Source { get; set; }
     }
